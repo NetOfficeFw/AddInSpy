@@ -1,0 +1,11 @@
+<Window x:Class="AddInSpy.WfDataProxyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:AddInSpy"
+        Width="850" Height="540">
+  <Grid>
+    <WindowsFormsHost Name="wfHost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+      <uc:AddInDataControl x:Name="addInDataControl"/>
+    </WindowsFormsHost>
+  </Grid>
+</Window>

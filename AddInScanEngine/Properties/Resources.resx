@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="STATUS_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PROBLEM_OUTLOOK_ADDIN" xml:space="preserve">
+    <value>This add-in cannot be loaded independently of the host application.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="WarningImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsRAAALEQF/ZF+RAAACiElE
+        QVQ4T7WRW0iTYRzGP7VGU3POQ5SQh6GVkXXhjRiWsc+55U3ghS0wwi6KOcJD3YaJUCGGRs1qs5lWc+a3
+        pWlruXlIrXk+U9qB5tosU8MyvoG0p9dtFwYhdtEPnpvn/zy8//d9qf8Gn8+nCs8XFqakHEr3Wv9GVlbW
+        iTbzHZdGUzPP4/GivfbGIKcHMozOZp/Zi4nR05DJcu8T288z3QBFRUUlA30XsfKTgx9fQ2Fq1a9ERUUd
+        9o7XJzExUWA2PWXHBw/genkGVLdpvB2RorS0rIeMt3hS66BWVzPvX8sx2L0PeXkFKMg/iaXpOAxbGFdS
+        UlKON/Z3aJoWjo+ZXMv2XRjqSoBUmo1T2RJ8m4zFu6406PWNVg6HE+qN/0lwcLCf2dw2aXsjxbI1HoPm
+        eKSm0sjJPoKFgQjMdYdgoqfClZmZeZnEfTytNcjl8tyxAbVraToa8yMReNUQDh6Pj+PH9sNh9IO9xRdT
+        j8LQanz2nfzSHm/NQ0xMTJjBYJj/0L0bsz0BcHT6Y4ThInzbdpzLSYa9iYJNR2Gm3gf9ujPIy8+vJ7VN
+        njbhUnHxjd7nuXC88IejnQt7KwcOgy8elgTCouLC1kDBWueLjw82Y0rtD+OTul8CgYB2l4VCYUKjvnbF
+        1hmJ2Y4wOMx8snIQRjUB2BkZjQsyET4xQbDWh8CqDXXLUiPClaul/aTOpRSVtwxDJhkWhsXkscRY7EvH
+        Ym8aFi00tBUivNRkYK5DjC/tErfmOsX43CaCUVfpSk4+eJYqK7tmuatUOFWVFc57KoWzrrbKqdfWOlse
+        a53GZsatZr2WJR6rqVGx1cqbrFJRzqqrlKxEcrRq9RZbiWKJ4jag1dwaUTt+AwJ7VakXZN4zAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="REPORT_CONTEXT" xml:space="preserve">
+    <value>Context</value>
+  </data>
+  <data name="REPORT_ELEMENT_IPADDRESS" xml:space="preserve">
+    <value>ipAddress</value>
+  </data>
+  <data name="REPORT_ELEMENT_USERNAME" xml:space="preserve">
+    <value>userName</value>
+  </data>
+  <data name="REPORT_ELEMENT_DOMAINNAME" xml:space="preserve">
+    <value>domainName</value>
+  </data>
+  <data name="SCAN_NATIVE_INTERFACES" xml:space="preserve">
+    <value>Native Interfaces</value>
+  </data>
+  <data name="SCAN_MANAGED_INTERFACES" xml:space="preserve">
+    <value>Managed Interfaces</value>
+  </data>
+  <data name="RPC_E_CALL_REJECTED_MESSAGE" xml:space="preserve">
+    <value>RPC Call Rejected: We attempted to connect to the host application, to determine whether each add-in is loaded, but we failed to connect to the host. The host is busy. If there is a dialog open in the host, close it and hit Refresh in this app.</value>
+  </data>
+  <data name="STATUS_TRUE" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="INVALID_ASSEMBLYNAME" xml:space="preserve">
+    <value>Invalid name</value>
+  </data>
+  <data name="PATH_INVALID" xml:space="preserve">
+    <value>Add-in DLL path is not found.</value>
+  </data>
+  <data name="NOT_APPLICABLE" xml:space="preserve">
+    <value>n/a</value>
+  </data>
+  <data name="REMOTE_NOT_SELECTED" xml:space="preserve">
+    <value>This is a remote-deployed add-in and remote scanning is not selected.</value>
+  </data>
+  <data name="SECONDARY_INTERFACES_NONE" xml:space="preserve">
+    <value>(none)</value>
+  </data>
+  <data name="STATUS_FALSE" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="STATUS_ALERT" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="OkImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsRAAALEQF/ZF+RAAAB4ElE
+        QVQ4T2MgFZjLisgvjbCtz7PW1IcKEQ+AmoWfNoff+zYn4f/L9vD/wTryilAp4sD9quDJX2bG//8yLeb/
+        3drAN6oifMQbsCzCNuH9pBig5uj/b7vC/lc46NQDhVkhsgQA0OmSz1vCH3+ZGv3/Y2/Y/9UxdruBwvwQ
+        WSLAg6rgFZ8mR/3/1Bf2/2a53ys1ET5DqBRhAAzxqLfd4UCbQ/+/agoEBVwiUJgFIgsFQCdCWagAHOoN
+        IQ8/9oT+f9sa8H9qgNkKoDAPRBYKlkXaZb7qi337qD5su6mMiDRUGAyWR9n1ve8K+f++1f//jRKfVyrC
+        vLpQKQQAan7/e3XW/x9L0/8/bgq7ZyojDI4aYEIxe9UcBNb8stb3f4qpailQGNXpILAsxr7z85zk/z8W
+        pfwHJZBHdSEPsizUNR5VB95+1+L3/02t1/+Ncfb7gEpxh/rCcJvGdxOiwXH8sT/8/8OqwKdvGiGa7xR7
+        fdQU47cAKmOEqMYBFoRZF75qC/n/oTPo/7smX6Bmz/8vyt3/t7kbTgBKs0FUEQALQq3Tn9f6/39T4/n/
+        VZnr/6t5Hi/EuDnkodLEgYVh1ulPy7z+Pyty+Z9npVELFMIMOEIgy1LdNc1MtZSLlVkYKoQDMDAAAEky
+        zJMGhDfKAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="HTTP_PARTIAL_INFORMATION" xml:space="preserve">
+    <value>AddInSpy provides only partial information for add-ins deployed to HTTP URLs.</value>
+  </data>
+  <data name="EMPTY_MANIFESTPATH" xml:space="preserve">
+    <value>manifest path cannot be empty</value>
+  </data>
+  <data name="REPORT_ELEMENT_CONTEXT" xml:space="preserve">
+    <value>context</value>
+  </data>
+  <data name="CONTEXT_ADDIN_EMPTY" xml:space="preserve">
+    <value>Context information is empty, and add-in information is empty</value>
+  </data>
+  <data name="REPORT_ADDINS" xml:space="preserve">
+    <value>AddIns</value>
+  </data>
+  <data name="REPORT_ELEMENT_TIMESTAMP" xml:space="preserve">
+    <value>timestamp</value>
+  </data>
+  <data name="MESSAGECLASS_FORMREGION" xml:space="preserve">
+    <value>MessageClass={0}, FormRegion={1}</value>
+  </data>
+  <data name="REPORT_ELEMENT_REPORT" xml:space="preserve">
+    <value>report</value>
+  </data>
+  <data name="REGISTRATION_INVALID" xml:space="preserve">
+    <value>Add-in COM CLSID registration is incomplete or invalid.</value>
+  </data>
+  <data name="SCAN_FORMREGIONS" xml:space="preserve">
+    <value>FormRegions</value>
+  </data>
+  <data name="SCAN_DISABLED_ITEMS" xml:space="preserve">
+    <value>Disabled Items</value>
+  </data>
+  <data name="VALUE_UNKNOWN" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="REPORT_ELEMENT_ADDINS" xml:space="preserve">
+    <value>addIns</value>
+  </data>
+  <data name="ADDIN_TYPE_VSTO" xml:space="preserve">
+    <value>VSTO</value>
+  </data>
+  <data name="ADDIN_DISABLED" xml:space="preserve">
+    <value>Add-in seems to be disabled in: {0} {1}.</value>
+  </data>
+  <data name="ADDIN_TYPE_NATIVE" xml:space="preserve">
+    <value>Native</value>
+  </data>
+  <data name="REGISTERED_MULTIPLE_TIMES" xml:space="preserve">
+    <value>Add-in is registered multiple times.</value>
+  </data>
+  <data name="SCAN_HKCU" xml:space="preserve">
+    <value>HKCU</value>
+  </data>
+  <data name="SCAN_HKLM" xml:space="preserve">
+    <value>HKLM</value>
+  </data>
+  <data name="REPORT_ELEMENT_OS" xml:space="preserve">
+    <value>os</value>
+  </data>
+  <data name="REPORT_ELEMENT_MACHINE" xml:space="preserve">
+    <value>machine</value>
+  </data>
+  <data name="NATIVE_SCAN_FAILED" xml:space="preserve">
+    <value>The scan for secondary extensibility interfaces failed on this native add-in.</value>
+  </data>
+  <data name="ADDIN_TYPE_MANAGED" xml:space="preserve">
+    <value>Managed</value>
+  </data>
+  <data name="TYPELOADEXCEPTION_MESSAGE" xml:space="preserve">
+    <value>TypeLoadException: one reason you can get this error is if you have an Office 2007 add-in registered on a machine which only has Office 2003 installed.{0}{0}Add-in path:{0}{1}{0}{0}Details:{0}{2}</value>
+  </data>
+  <data name="SCAN_REMOTE" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="VSTO_RIBBON" xml:space="preserve">
+    <value>VSTO Ribbon</value>
+  </data>
+  <data name="VSTO_TASKPANE" xml:space="preserve">
+    <value>VSTO Task Pane</value>
+  </data>
+  <data name="VSTO_FORMREGION" xml:space="preserve">
+    <value>VSTO Form Region</value>
+  </data>
+</root>

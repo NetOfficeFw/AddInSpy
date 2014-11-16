@@ -1,0 +1,10 @@
+<UserControl x:Class="AddInSpy.WfGridProxyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:uc="clr-namespace:AddInSpy">
+  <Grid>
+    <WindowsFormsHost Name="wfHost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+      <uc:AddInGridControl x:Name="addInGridControl"/>
+    </WindowsFormsHost>
+  </Grid>
+</UserControl>

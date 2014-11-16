@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="VSTOR.HeaderText" xml:space="preserve">
+    <value>VSTOR</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Installed.Width" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;Host.Name" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="&gt;&gt;Host.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FriendlyName.Name" xml:space="preserve">
+    <value>FriendlyName</value>
+  </data>
+  <data name="&gt;&gt;FriendlyName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Running.Width" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;Installed.Name" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="&gt;&gt;Installed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Type.ToolTipText" xml:space="preserve">
+    <value>VSTO, Managed or Native (unmanaged). Note that Office cannot distinguish between an unmanaged add-in and an unmanaged shim to a managed add-in.</value>
+  </data>
+  <data name="&gt;&gt;Type.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Type.Name" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DllPath.ToolTipText" xml:space="preserve">
+    <value>The path to the add-in DLL. Note that this is not necessarily the DLL that Office loads first.</value>
+  </data>
+  <data name="Exposed.Width" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="ProgID.HeaderText" xml:space="preserve">
+    <value>ProgID</value>
+  </data>
+  <data name="&gt;&gt;LoadBehavior.Name" xml:space="preserve">
+    <value>LoadBehavior</value>
+  </data>
+  <data name="&gt;&gt;LoadBehavior.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 640</value>
+  </data>
+  <data name="Installed.ToolTipText" xml:space="preserve">
+    <value>Installation date for this add-in</value>
+  </data>
+  <data name="FormRegions.HeaderText" xml:space="preserve">
+    <value>FormRegions</value>
+  </data>
+  <data name="&gt;&gt;FormRegions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FormRegions.Name" xml:space="preserve">
+    <value>FormRegions</value>
+  </data>
+  <data name="PubVer.ToolTipText" xml:space="preserve">
+    <value>For VSTO add-ins, the publish version</value>
+  </data>
+  <data name="Status2.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="Host.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="LoadBehavior.ToolTipText" xml:space="preserve">
+    <value>The registered LoadBehavior for this add-in</value>
+  </data>
+  <data name="&gt;&gt;ProgID.Name" xml:space="preserve">
+    <value>ProgID</value>
+  </data>
+  <data name="&gt;&gt;ProgID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FriendlyName.Width" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="Host.HeaderText" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="FormRegions.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="Manifest.HeaderText" xml:space="preserve">
+    <value>Manifest</value>
+  </data>
+  <data name="Host.ToolTipText" xml:space="preserve">
+    <value>Office host application</value>
+  </data>
+  <data name="Loaded.ToolTipText" xml:space="preserve">
+    <value>Is this add-in currently loaded in the host application?</value>
+  </data>
+  <data name="StatusDescription.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Type.Width" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="LoadBehavior.HeaderText" xml:space="preserve">
+    <value>LB</value>
+  </data>
+  <data name="Interfaces.ToolTipText" xml:space="preserve">
+    <value>The list of secondary extensibility interfaces implemented by this add-in</value>
+  </data>
+  <data name="&gt;&gt;DllPath.Name" xml:space="preserve">
+    <value>DllPath</value>
+  </data>
+  <data name="&gt;&gt;DllPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Status2.HeaderText" xml:space="preserve">
+    <value>OK?</value>
+  </data>
+  <data name="LoadBehavior.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="FriendlyName.HeaderText" xml:space="preserve">
+    <value>FriendlyName</value>
+  </data>
+  <data name="DllPath.Width" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="Exposed.HeaderText" xml:space="preserve">
+    <value>Exposed</value>
+  </data>
+  <data name="&gt;&gt;addInGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Type.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="CLSID.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="Loaded.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="DllPath.HeaderText" xml:space="preserve">
+    <value>DLL Path</value>
+  </data>
+  <data name="&gt;&gt;addInGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StatusDescription.ToolTipText" xml:space="preserve">
+    <value>Error description, in the case where the registration or path information for this add-in is invalid.</value>
+  </data>
+  <data name="Manifest.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;Status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Status.Name" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AssemblyName.HeaderText" xml:space="preserve">
+    <value>Assembly</value>
+  </data>
+  <data name="&gt;&gt;RegHive.Name" xml:space="preserve">
+    <value>RegHive</value>
+  </data>
+  <data name="&gt;&gt;RegHive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CLR_version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CLR_version.Name" xml:space="preserve">
+    <value>CLR_version</value>
+  </data>
+  <data name="&gt;&gt;Item.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Item.Name" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="&gt;&gt;Interfaces.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Interfaces.Name" xml:space="preserve">
+    <value>Interfaces</value>
+  </data>
+  <data name="RegHive.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="Installed.HeaderText" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="Item.HeaderText" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="PubVer.HeaderText" xml:space="preserve">
+    <value>PubVer</value>
+  </data>
+  <data name="&gt;&gt;Exposed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Exposed.Name" xml:space="preserve">
+    <value>Exposed</value>
+  </data>
+  <data name="AssemblyName.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;AssemblyName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AssemblyName.Name" xml:space="preserve">
+    <value>AssemblyName</value>
+  </data>
+  <data name="VSTOR.ToolTipText" xml:space="preserve">
+    <value>Version of the VSTO runtime used by this add-in</value>
+  </data>
+  <data name="FriendlyName.ToolTipText" xml:space="preserve">
+    <value>The simple name that is reported in the COM Add-ins dialog and the Trust Center. This name is arbitrary.</value>
+  </data>
+  <data name="CLSID.ToolTipText" xml:space="preserve">
+    <value>The COM CLSID for the entrypoint component (class) in the add-in.</value>
+  </data>
+  <data name="Item.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="CLSID.HeaderText" xml:space="preserve">
+    <value>CLSID</value>
+  </data>
+  <data name="CLR_version.ToolTipText" xml:space="preserve">
+    <value>Managed/VSTO add-ins only: which version of the CLR does this add-in specify in its metadata?</value>
+  </data>
+  <data name="&gt;&gt;Running.Name" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="&gt;&gt;Running.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Manifest.ToolTipText" xml:space="preserve">
+    <value>For VSTO add-ins, the path to the manifest</value>
+  </data>
+  <data name="&gt;&gt;VSTOR.Name" xml:space="preserve">
+    <value>VSTOR</value>
+  </data>
+  <data name="&gt;&gt;VSTOR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="addInGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1264, 640</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="addInGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="addInGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Status.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Status2.Name" xml:space="preserve">
+    <value>Status2</value>
+  </data>
+  <data name="&gt;&gt;Status2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PubVer.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="AssemblyName.ToolTipText" xml:space="preserve">
+    <value>Managed/VSTO add-ins only: the fully-qualified name of the assembly, including version, culture and public key token.</value>
+  </data>
+  <data name="Running.HeaderText" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="Exposed.ToolTipText" xml:space="preserve">
+    <value>Does this add-in expose itself through the COMAddIns collection?</value>
+  </data>
+  <data name="&gt;&gt;StatusDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusDescription.Name" xml:space="preserve">
+    <value>StatusDescription</value>
+  </data>
+  <data name="Interfaces.HeaderText" xml:space="preserve">
+    <value>Interfaces</value>
+  </data>
+  <data name="RegHive.ToolTipText" xml:space="preserve">
+    <value>Is this add-in registered for the current user (HKCU) or all users on the machine (HKLM)?</value>
+  </data>
+  <data name="Status.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ProgID.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AddInGridControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProgID.ToolTipText" xml:space="preserve">
+    <value>The COM ProgID for this add-in. For managed/VSTO add-ins, this is typically the &lt;namespace&gt;.&lt;classname&gt;.</value>
+  </data>
+  <data name="&gt;&gt;Manifest.Name" xml:space="preserve">
+    <value>Manifest</value>
+  </data>
+  <data name="&gt;&gt;Manifest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CLR_version.HeaderText" xml:space="preserve">
+    <value>CLR</value>
+  </data>
+  <data name="CLR_version.Width" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="RegHive.HeaderText" xml:space="preserve">
+    <value>RegHive</value>
+  </data>
+  <data name="Interfaces.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;PubVer.Name" xml:space="preserve">
+    <value>PubVer</value>
+  </data>
+  <data name="&gt;&gt;PubVer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Loaded.Name" xml:space="preserve">
+    <value>Loaded</value>
+  </data>
+  <data name="&gt;&gt;Loaded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addInGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addInGrid.Name" xml:space="preserve">
+    <value>addInGrid</value>
+  </data>
+  <data name="Loaded.HeaderText" xml:space="preserve">
+    <value>Loaded</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="VSTOR.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;CLSID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CLSID.Name" xml:space="preserve">
+    <value>CLSID</value>
+  </data>
+  <data name="Running.ToolTipText" xml:space="preserve">
+    <value>Is this host application currently running?</value>
+  </data>
+  <data name="Status2.ToolTipText" xml:space="preserve">
+    <value>Is the registration and path information for this add-in valid?</value>
+  </data>
+  <data name="FormRegions.ToolTipText" xml:space="preserve">
+    <value>Any custom form regions provided by this add-in, and the corresponding message classes.</value>
+  </data>
+  <data name="addInGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+</root>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Jozef\Downloads\AddInSpy\AddInScanEngine.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DAF28B6-078C-457D-9591-13DFE22C1CE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>AddInScanEngine</AssemblyName>
+    <ApplicationVersion>1.5.0.0</ApplicationVersion>
+    <RootNamespace>AddInSpy</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="PresentationCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddInData.cs" />
+    <Compile Include="ReportWriter.cs" />
+    <Compile Include="ManifestReader.cs" />
+    <Compile Include="ComAddInUtilities.cs" />
+    <Compile Include="NativeAddInScanner.cs" />
+    <Compile Include="RegistryReader.cs" />
+    <Compile Include="ModuleScopeTokenResolver.cs" />
+    <Compile Include="SecondaryExtensibility.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="MethodInstruction.cs" />
+    <Compile Include="IAddInGridControl.cs" />
+    <Compile Include="GacEnumerator.cs" />
+    <Compile Include="GridProxy.cs" />
+    <Compile Include="ILReader.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="AssemblyScanner.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

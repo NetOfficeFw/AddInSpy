@@ -1,0 +1,115 @@
+<Window x:Class="AddInSpy.AddInSpyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:AddInSpy"
+        Closing="Window_Closing" Title="AddInSpy" Height="720" Width="1270">
+  <Grid Name="outerGrid" Row="1" VerticalAlignment="Top">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="28"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="28"/>
+    </Grid.RowDefinitions>
+    <Grid Name="innerGrid" Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="44"/>
+        <ColumnDefinition Width="138"/>
+        <ColumnDefinition Width="44"/>
+        <ColumnDefinition Width="138"/>
+        <ColumnDefinition Width="72"/>
+        <ColumnDefinition Width="86"/>
+        <ColumnDefinition Width="52"/>
+        <ColumnDefinition Width="138"/>
+        <ColumnDefinition Width="72"/>
+        <ColumnDefinition Width="72"/>
+      </Grid.ColumnDefinitions>
+      <Label Name="labelHosts" Grid.Column="0" Margin="1,2,1,1"/>
+      <uc:CheckedComboControl x:Name="selectedHosts" Grid.Row="0" Grid.Column="1" Margin="1,3,1,1"/>
+      <Label Name="labelScans" Grid.Column="2" Margin="1,2,1,1"/>
+      <uc:CheckedComboControl x:Name="selectedScans" Grid.Row="0" Grid.Column="3" Margin="1,3,1,1"/>
+      <Button Click="buttonRefresh_Click" Name="buttonRefresh" Grid.Column="4" Height="24" Width="70"
+              Margin="1,1,1,1">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/Refresh.png"/>
+          <TextBlock Name="buttonRefreshText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+      <CheckBox Click="autoRefresh_Click" Name="autoRefresh" Grid.Column="5" Height="24" Margin="1,7,1,1"
+                FlowDirection="RightToLeft" IsChecked="false"/>
+      <Label Name="labelReport" Grid.Column="6" Margin="1,2,1,1"/>
+      <uc:CheckedComboControl x:Name="selectedReport" Grid.Row="0" Grid.Column="7" Margin="1,3,1,1"/>
+      <Button Click="buttonReport_Click" Name="buttonReport" Grid.Column="8" Height="24" Width="70"
+              Margin="1,1,1,1">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/Report.png"/>
+          <TextBlock Name="buttonReportText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+      <Button Click="buttonHelp_Click" Name="buttonHelp" Grid.Column="9" Height="24" Width="70" Margin="1,1,1,1">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/Help.png"/>
+          <TextBlock Name="buttonHelpText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+    </Grid>
+    <uc:WfGridProxyControl x:Name="gridControl" Grid.Row="1" Margin="1,1,1,1" HorizontalAlignment="Left" Height="648"
+                           Width="1135"/>
+    <StatusBar Name="statusBar" Grid.Row="2" VerticalAlignment="Bottom">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+          </Grid>
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <StatusBarItem Grid.Column="0">
+        <TextBlock Name="statusMachine"/>
+      </StatusBarItem>
+      <Separator Grid.Column="1" Background="DarkGray" Width="1" Height="20"/>
+      <StatusBarItem Grid.Column="2">
+        <TextBlock Name="statusUser"/>
+      </StatusBarItem>
+      <Separator Grid.Column="3" Background="DarkGray" Width="1" Height="20"/>
+      <StatusBarItem Grid.Column="4">
+        <TextBlock Name="statusOS"/>
+      </StatusBarItem>
+      <Separator Grid.Column="5" Background="DarkGray" Width="1" Height="20"/>
+      <StatusBarItem Grid.Column="6">
+        <TextBlock Name="statusVstoSuppressDisplayAlerts" Text="VSTO_SUPPRESSDISPLAYALERTS="/>
+      </StatusBarItem>
+      <Separator Grid.Column="7" Background="DarkGray" Width="1" Height="20"/>
+      <StatusBarItem Grid.Column="8">
+        <TextBlock Name="statusVstoLogAlerts" Text="VSTO_LOGALERTS="/>
+      </StatusBarItem>
+      <Separator Grid.Column="9" Background="DarkGray" Width="1" Height="20"/>
+      <StatusBarItem Grid.Column="10">
+        <TextBlock Name="statusAddInsFound"/>
+      </StatusBarItem>
+      <Separator Grid.Column="11" Background="DarkGray" Width="1" Height="20"/>
+    </StatusBar>
+  </Grid>
+</Window>

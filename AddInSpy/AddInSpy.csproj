@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Jozef\Downloads\AddInSpy\AddInSpy.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A0D7117-5711-4C74-A1D0-BC2D878BC093}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>AddInSpy</AssemblyName>
+    <ApplicationVersion>1.5.0.0</ApplicationVersion>
+    <RootNamespace>AddInSpy</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="AddInScanEngine">
+      <HintPath>lib\AddInScanEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddInGridControl.cs" />
+    <Compile Include="AddInDataControl.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="CheckedComboClick.cs" />
+    <Compile Include="CheckedComboEventArgs.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="CheckedComboControl.xaml.cs">
+      <DependentUpon>checkedcombocontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HelpWindow.xaml.cs">
+      <DependentUpon>helpwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AddInSpyWindow.xaml.cs">
+      <DependentUpon>addinspywindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WfGridProxyControl.xaml.cs">
+      <DependentUpon>wfgridproxycontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WfDataProxyWindow.xaml.cs">
+      <DependentUpon>wfdataproxywindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\addinspy.ico" />
+    <Resource Include="images\help.png" />
+    <Resource Include="images\homehs.png" />
+    <Resource Include="images\navback.png" />
+    <Resource Include="images\navforward.png" />
+    <Resource Include="images\refresh.png" />
+    <Resource Include="images\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddInDataControl.resx" />
+    <EmbeddedResource Include="AddInGridControl.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="addinspywindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="helpwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="checkedcombocontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wfdataproxywindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wfgridproxycontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

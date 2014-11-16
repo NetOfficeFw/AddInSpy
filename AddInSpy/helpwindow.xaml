@@ -1,0 +1,54 @@
+<Window x:Class="AddInSpy.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HelpWindow" Height="640" Width="760">
+  <Grid Name="outerGrid" Row="1" VerticalAlignment="Top">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="28"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid Name="innerGrid" Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="72"/>
+        <ColumnDefinition Width="72"/>
+        <ColumnDefinition Width="72"/>
+      </Grid.ColumnDefinitions>
+      <Button Click="buttonHome_Click" Name="buttonHome" Grid.Column="0" Height="24" Width="70" Margin="1,1,1,1"
+              IsEnabled="true">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/HomeHS.png"/>
+          <TextBlock Name="buttonHomeText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+      <Button Click="buttonBack_Click" Name="buttonBack" Grid.Column="1" Height="24" Width="70" Margin="1,1,1,1"
+              IsEnabled="false">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/NavBack.png"/>
+          <TextBlock Name="buttonBackText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+      <Button Click="buttonForward_Click" Name="buttonForward" Grid.Column="2" Height="24" Width="70"
+              Margin="1,1,1,1" IsEnabled="false">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Source="/AddInSpy;component/Images/NavForward.png"/>
+          <TextBlock Name="buttonForwardText" Grid.Column="1"/>
+        </Grid>
+      </Button>
+    </Grid>
+    <DockPanel Grid.Row="1" LastChildFill="true">
+      <WebBrowser Name="webBrowser"/>
+    </DockPanel>
+  </Grid>
+</Window>
