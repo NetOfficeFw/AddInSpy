@@ -16,10 +16,6 @@ namespace AddInSpy
 {
   public partial class WfGridProxyControl : UserControl, IComponentConnector
   {
-    internal WindowsFormsHost wfHost;
-    internal AddInGridControl addInGridControl;
-    private bool _contentLoaded;
-
     public WfGridProxyControl()
     {
       this.InitializeComponent();
@@ -37,33 +33,6 @@ namespace AddInSpy
       }
       this.wfHost.Width = sizeInfo.NewSize.Width - 2.0 * SystemParameters.ResizeFrameVerticalBorderWidth + SystemParameters.VerticalScrollBarWidth - (double) num1;
       this.wfHost.Height = sizeInfo.NewSize.Height - 2.0 * SystemParameters.ResizeFrameHorizontalBorderHeight - SystemParameters.HorizontalScrollBarHeight - (double) num2;
-    }
-
-    [DebuggerNonUserCode]
-    public void InitializeComponent()
-    {
-      if (this._contentLoaded)
-        return;
-      this._contentLoaded = true;
-      Application.LoadComponent((object) this, new Uri("/AddInSpy;component/wfgridproxycontrol.xaml", UriKind.Relative));
-    }
-
-    [DebuggerNonUserCode]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    void IComponentConnector.Connect(int connectionId, object target)
-    {
-      switch (connectionId)
-      {
-        case 1:
-          this.wfHost = (WindowsFormsHost) target;
-          break;
-        case 2:
-          this.addInGridControl = (AddInGridControl) target;
-          break;
-        default:
-          this._contentLoaded = true;
-          break;
-      }
     }
   }
 }

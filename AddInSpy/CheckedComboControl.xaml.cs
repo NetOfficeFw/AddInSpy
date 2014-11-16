@@ -14,14 +14,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Markup;
+using AppResources = AddInSpy.Properties.Resources;
 
 namespace AddInSpy
 {
   public partial class CheckedComboControl : UserControl, IComponentConnector
   {
-    internal ComboBox Combo;
-    private bool _contentLoaded;
-
     public string[] CheckedItems
     {
       get
@@ -85,36 +83,17 @@ label_6:
         }
       }
       if (list.Count == 0)
-        this.Combo.Text = Resources.OPTION_NONE;
+        this.Combo.Text = AppResources.OPTION_NONE;
       else if (list.Count == 1)
         this.Combo.Text = str;
       else if (list.Count == this.Combo.Items.Count - 1)
-        this.Combo.Text = Resources.OPTION_ALL;
+        this.Combo.Text = AppResources.OPTION_ALL;
       else if (list.Count > 1)
-        this.Combo.Text = Resources.OPTION_MULTIPLE;
+        this.Combo.Text = AppResources.OPTION_MULTIPLE;
       CheckedComboEventArgs e1 = new CheckedComboEventArgs(list.ToArray());
       if (this.CheckedComboClickEvent == null)
         return;
       this.CheckedComboClickEvent((object) this, e1);
-    }
-
-    [DebuggerNonUserCode]
-    public void InitializeComponent()
-    {
-      if (this._contentLoaded)
-        return;
-      this._contentLoaded = true;
-      Application.LoadComponent((object) this, new Uri("/AddInSpy;component/checkedcombocontrol.xaml", UriKind.Relative));
-    }
-
-    [DebuggerNonUserCode]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    void IComponentConnector.Connect(int connectionId, object target)
-    {
-      if (connectionId == 1)
-        this.Combo = (ComboBox) target;
-      else
-        this._contentLoaded = true;
     }
   }
 }

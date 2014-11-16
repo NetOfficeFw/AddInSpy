@@ -12,22 +12,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using AppResources = AddInSpy.Properties.Resources;
 
 namespace AddInSpy
 {
   public partial class HelpWindow : Window, IComponentConnector
   {
     private string helpFilePath;
-    internal Grid outerGrid;
-    internal Grid innerGrid;
-    internal Button buttonHome;
-    internal TextBlock buttonHomeText;
-    internal Button buttonBack;
-    internal TextBlock buttonBackText;
-    internal Button buttonForward;
-    internal TextBlock buttonForwardText;
-    internal WebBrowser webBrowser;
-    private bool _contentLoaded;
 
     public HelpWindow()
     {
@@ -45,12 +36,12 @@ namespace AddInSpy
 
     private void InitializeUI()
     {
-      this.buttonHomeText.Text = Resources.BUTTON_HOME;
-      this.buttonHome.ToolTip = (object) Resources.BUTTON_HOME_TOOLTIP;
-      this.buttonBackText.Text = Resources.BUTTON_BACK;
-      this.buttonBack.ToolTip = (object) Resources.BUTTON_BACK_TOOLTIP;
-      this.buttonForwardText.Text = Resources.BUTTON_FORWARD;
-      this.buttonForward.ToolTip = (object) Resources.BUTTON_FORWARD_TOOLTIP;
+      this.buttonHomeText.Text = AppResources.BUTTON_HOME;
+      this.buttonHome.ToolTip = (object) AppResources.BUTTON_HOME_TOOLTIP;
+      this.buttonBackText.Text = AppResources.BUTTON_BACK;
+      this.buttonBack.ToolTip = (object) AppResources.BUTTON_BACK_TOOLTIP;
+      this.buttonForwardText.Text = AppResources.BUTTON_FORWARD;
+      this.buttonForward.ToolTip = (object) AppResources.BUTTON_FORWARD_TOOLTIP;
     }
 
     private void webBrowser_Navigated(object sender, NavigationEventArgs e)
@@ -72,57 +63,6 @@ namespace AddInSpy
     private void buttonForward_Click(object sender, RoutedEventArgs e)
     {
       this.webBrowser.GoForward();
-    }
-
-    [DebuggerNonUserCode]
-    public void InitializeComponent()
-    {
-      if (this._contentLoaded)
-        return;
-      this._contentLoaded = true;
-      Application.LoadComponent((object) this, new Uri("/AddInSpy;component/helpwindow.xaml", UriKind.Relative));
-    }
-
-    [DebuggerNonUserCode]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    void IComponentConnector.Connect(int connectionId, object target)
-    {
-      switch (connectionId)
-      {
-        case 1:
-          this.outerGrid = (Grid) target;
-          break;
-        case 2:
-          this.innerGrid = (Grid) target;
-          break;
-        case 3:
-          this.buttonHome = (Button) target;
-          this.buttonHome.Click += new RoutedEventHandler(this.buttonHome_Click);
-          break;
-        case 4:
-          this.buttonHomeText = (TextBlock) target;
-          break;
-        case 5:
-          this.buttonBack = (Button) target;
-          this.buttonBack.Click += new RoutedEventHandler(this.buttonBack_Click);
-          break;
-        case 6:
-          this.buttonBackText = (TextBlock) target;
-          break;
-        case 7:
-          this.buttonForward = (Button) target;
-          this.buttonForward.Click += new RoutedEventHandler(this.buttonForward_Click);
-          break;
-        case 8:
-          this.buttonForwardText = (TextBlock) target;
-          break;
-        case 9:
-          this.webBrowser = (WebBrowser) target;
-          break;
-        default:
-          this._contentLoaded = true;
-          break;
-      }
     }
   }
 }

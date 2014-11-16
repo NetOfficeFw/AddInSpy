@@ -75,7 +75,31 @@ namespace AddInSpy
       addInData.SetUnknownValues();
       if (!string.IsNullOrEmpty(addInData.StatusDescription))
         addInData.StatusImage = Resources.WarningImage;
-      this.dataTable.Rows.Add((object) this.item, (object) addInData.HostName, (object) (bool) (addInData.IsRunning ? 1 : 0), (object) (bool) (addInData.IsLoaded ? 1 : 0), (object) addInData.AddInType, (object) addInData.FriendlyName, (object) addInData.ProgId, (object) addInData.Clsid, (object) addInData.ManifestPath, (object) addInData.AssemblyPath, (object) addInData.LoadBehavior, (object) addInData.RegHiveName, (object) addInData.AssemblyName, (object) addInData.ClrVersion, (object) (bool) (addInData.IsObjectExposed ? 1 : 0), (object) addInData.SupportedInterfaces, (object) addInData.OutlookFormRegions, (object) addInData.VstoRuntime, (object) addInData.InstallDate, (object) addInData.AssemblyVersion, (object) addInData.StatusImage, (object) (bool) (addInData.Status ? 1 : 0), (object) addInData.StatusDescription);
+      this.dataTable.Rows.Add(
+          (object) this.item,
+          (object) addInData.HostName,
+          (object) addInData.IsRunning,
+          (object) addInData.IsLoaded,
+          (object) addInData.AddInType,
+          (object) addInData.FriendlyName,
+          (object) addInData.ProgId,
+          (object) addInData.Clsid,
+          (object) addInData.ManifestPath,
+          (object) addInData.AssemblyPath,
+          (object) addInData.LoadBehavior,
+          (object) addInData.RegHiveName,
+          (object) addInData.AssemblyName,
+          (object) addInData.ClrVersion,
+          (object) addInData.IsObjectExposed,
+          (object) addInData.SupportedInterfaces,
+          (object) addInData.OutlookFormRegions,
+          (object) addInData.VstoRuntime,
+          (object) addInData.InstallDate,
+          (object) addInData.AssemblyVersion,
+          (object) addInData.StatusImage,
+          (object) addInData.Status,
+          (object) addInData.StatusDescription
+      );
       ++this.item;
     }
   }
