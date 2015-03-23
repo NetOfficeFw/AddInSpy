@@ -1,0 +1,31 @@
+#
+# AddInSpy solution
+# AppVeyor configuration
+#
+
+version: 1.5.0.{build}
+
+branches:
+  except:
+    - gh-pages
+
+os: Windows Server 2012
+
+platform: Any CPU
+configuration:
+  - Debug
+  - Release
+
+build:
+  project: AddInSpy.sln
+  verbosity: detailed
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+cache:
+  - packages
