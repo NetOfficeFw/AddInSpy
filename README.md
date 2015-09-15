@@ -1,6 +1,6 @@
 # AddInSpy
 
-AddInSpy is a diagnostic tool that discovers all registered Microsoft Office add-ins on a computer, and then reports as much information as it cannot about those add-ins. The tool works with all versions of all Microsoft Office applications that support COM add-ins, and all types of COM add-ins.
+AddInSpy is a diagnostic tool that discovers all registered Microsoft Office add-ins on a computer, and then reports as much information as it can about those add-ins. The tool works with all versions of all Microsoft Office applications that support COM add-ins, and all types of COM add-ins.
 
 Original AddInSpy tool was [developed by VSTO team][1] in Microsoft.
 
