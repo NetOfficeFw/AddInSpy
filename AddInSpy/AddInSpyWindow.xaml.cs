@@ -338,6 +338,9 @@ namespace AddInSpy
 
     private void AddInGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
+      if (e.RowIndex == -1)
+          return;
+
       DataRow dataRow = this.controller.GridProxy.AddInDataTable.Rows[e.RowIndex];
       DataTable dataTable = new DataTable();
       dataTable.Columns.Add(AppResources.SINGLE_ROW_TABLE_ITEM_COLUMN);
