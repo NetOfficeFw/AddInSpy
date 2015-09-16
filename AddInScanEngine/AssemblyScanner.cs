@@ -15,34 +15,34 @@ using System.Reflection.Emit;
 
 namespace AddInSpy
 {
-  internal class AssemblyScanner
+  internal static class AssemblyScanner
   {
-    private string ribbonTypeName = "Microsoft.Office.Tools.Ribbon.OfficeRibbon";
-    private string formRegionTypeName = "Microsoft.Office.Tools.Outlook.FormRegionControl";
-    private Type[] exportedTypes;
-    private string assemblyFolder;
+    private const string ribbonTypeName = "Microsoft.Office.Tools.Ribbon.OfficeRibbon";
+    private const string formRegionTypeName = "Microsoft.Office.Tools.Outlook.FormRegionControl";
+    private static Type[] exportedTypes;
+    private static string assemblyFolder;
 
-    public string[] GetAssemblyInfo(string fileName, string hostName, bool isVstoAddIn)
+    public static string[] GetAssemblyInfo(string fileName, string hostName, bool isVstoAddIn)
     {
       string[] strArray = (string[]) null;
       try
       {
-        this.assemblyFolder = Path.GetDirectoryName(fileName);
+        assemblyFolder = Path.GetDirectoryName(fileName);
         Assembly assembly = Assembly.ReflectionOnlyLoadFrom(fileName);
-        this.exportedTypes = assembly.GetExportedTypes();
+        exportedTypes = assembly.GetExportedTypes();
         ArrayList assemblyInfo = new ArrayList();
         assemblyInfo.Add((object) assembly.FullName);
         assemblyInfo.Add((object) assembly.ImageRuntimeVersion);
         if (isVstoAddIn)
         {
-          this.CheckFormRegionType(assembly, ref assemblyInfo);
-          this.CheckRibbonType(ref assemblyInfo);
-          this.CheckCustomTaskPaneType(assembly, ref assemblyInfo);
+          CheckFormRegionType(assembly, ref assemblyInfo);
+          CheckRibbonType(ref assemblyInfo);
+          CheckCustomTaskPaneType(assembly, ref assemblyInfo);
         }
         int num = 0;
         foreach (KeyValuePair<string, Guid> keyValuePair in (IEnumerable<KeyValuePair<string, Guid>>) new SecondaryExtensibility(hostName).AddInInterfaces)
         {
-          if (this.IsInterfaceImplemented(keyValuePair.Value))
+          if (IsInterfaceImplemented(keyValuePair.Value))
           {
             assemblyInfo.Add((object) keyValuePair.Key);
             ++num;
@@ -63,10 +63,10 @@ namespace AddInSpy
       return strArray;
     }
 
-    private bool IsInterfaceImplemented(Guid iid)
+    private static bool IsInterfaceImplemented(Guid iid)
     {
       bool flag = false;
-      foreach (Type type in this.exportedTypes)
+      foreach (Type type in exportedTypes)
       {
         if (type.FindInterfaces(new TypeFilter(AssemblyScanner.InterfaceFilterHandler), (object) iid).Length > 0)
         {
@@ -85,7 +85,7 @@ namespace AddInSpy
       return flag;
     }
 
-    internal Assembly CurrentDomain_ReflectionOnlyAssemblyResolve(object sender, ResolveEventArgs args)
+    internal static Assembly CurrentDomain_ReflectionOnlyAssemblyResolve(object sender, ResolveEventArgs args)
     {
       Assembly assembly = (Assembly) null;
       string assemblyName = args.Name.Split(',')[0];
@@ -93,7 +93,7 @@ namespace AddInSpy
       {
         try
         {
-          string assemblyFile = Path.Combine(this.assemblyFolder, assemblyName + ".dll");
+          string assemblyFile = Path.Combine(assemblyFolder, assemblyName + ".dll");
           if (assemblyFile != null && assemblyFile.Length > 0)
           {
             try
@@ -104,7 +104,7 @@ namespace AddInSpy
             {
               try
               {
-                assembly = Assembly.ReflectionOnlyLoadFrom(this.GetAssemblyGacPath(assemblyName));
+                assembly = Assembly.ReflectionOnlyLoadFrom(GetAssemblyGacPath(assemblyName));
               }
               catch (Exception ex2)
               {
@@ -115,7 +115,7 @@ namespace AddInSpy
         }
         catch (Exception ex1)
         {
-          string assemblyFile = Path.Combine(this.assemblyFolder, assemblyName + ".exe");
+          string assemblyFile = Path.Combine(assemblyFolder, assemblyName + ".exe");
           if (assemblyFile != null && assemblyFile.Length > 0)
           {
             try
@@ -126,7 +126,7 @@ namespace AddInSpy
             {
               try
               {
-                assembly = Assembly.ReflectionOnlyLoadFrom(this.GetAssemblyGacPath(assemblyName));
+                assembly = Assembly.ReflectionOnlyLoadFrom(GetAssemblyGacPath(assemblyName));
               }
               catch (Exception ex3)
               {
@@ -139,11 +139,12 @@ namespace AddInSpy
       catch (Exception ex)
       {
         Debug.WriteLine(ex.ToString());
+        return assembly;
       }
       return assembly;
     }
 
-    private string GetAssemblyGacPath(string assemblyName)
+    private static string GetAssemblyGacPath(string assemblyName)
     {
       string str1 = (string) null;
       GacEnumerator gacEnumerator = new GacEnumerator(assemblyName);
@@ -155,7 +156,7 @@ namespace AddInSpy
         {
           if (nextAssembly != null)
           {
-            if (str2 != string.Empty && this.CompareVersionNumbers(str2, nextAssembly) == 1)
+            if (str2 != string.Empty && CompareVersionNumbers(str2, nextAssembly) == 1)
             {
               str1 = GacEnumerator.QueryAssemblyInfo(str2);
               break;
@@ -177,7 +178,7 @@ namespace AddInSpy
       return str1;
     }
 
-    public int CompareVersionNumbers(string assemblyA, string assemblyB)
+    public static int CompareVersionNumbers(string assemblyA, string assemblyB)
     {
       int num = 0;
       string[] strArray1 = assemblyA.Split(',')[1].Substring("Version=".Length + 1).Split('.');
@@ -208,13 +209,13 @@ namespace AddInSpy
       return num;
     }
 
-    private void CheckFormRegionType(Assembly assembly, ref ArrayList assemblyInfo)
+    private static void CheckFormRegionType(Assembly assembly, ref ArrayList assemblyInfo)
     {
       try
       {
         foreach (Type type in assembly.GetTypes())
         {
-          if (type.BaseType != null && type.BaseType.FullName == this.formRegionTypeName)
+          if (type.BaseType != null && type.BaseType.FullName == formRegionTypeName)
           {
             assemblyInfo.Add((object) Resources.VSTO_FORMREGION);
             break;
@@ -227,11 +228,11 @@ namespace AddInSpy
       }
     }
 
-    private void CheckRibbonType(ref ArrayList assemblyInfo)
+    private static void CheckRibbonType(ref ArrayList assemblyInfo)
     {
-      foreach (Type type in this.exportedTypes)
+      foreach (Type type in exportedTypes)
       {
-        if (type.BaseType != null && type.BaseType.BaseType != null && (type.BaseType.FullName == this.ribbonTypeName || type.BaseType.BaseType.FullName == this.ribbonTypeName))
+        if (type.BaseType != null && type.BaseType.BaseType != null && (type.BaseType.FullName == ribbonTypeName || type.BaseType.BaseType.FullName == ribbonTypeName))
         {
           assemblyInfo.Add((object) Resources.VSTO_RIBBON);
           break;
@@ -239,7 +240,7 @@ namespace AddInSpy
       }
     }
 
-    private void CheckCustomTaskPaneType(Assembly assembly, ref ArrayList assemblyInfo)
+    private static void CheckCustomTaskPaneType(Assembly assembly, ref ArrayList assemblyInfo)
     {
       try
       {

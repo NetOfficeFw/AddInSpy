@@ -27,6 +27,7 @@ namespace AddInSpy
     private string assemblyPath;
     private string loadBehavior;
     private string regHiveName;
+    private bool wow6432;
     private string assemblyName;
     private string clrVersion;
     private bool isObjectExposed;
@@ -39,7 +40,6 @@ namespace AddInSpy
     private bool status;
     private string statusDescription;
     private AppDomain currentDomain;
-    private AssemblyScanner scanner;
 
     public string HostName
     {
@@ -171,6 +171,18 @@ namespace AddInSpy
       {
         this.regHiveName = value;
       }
+    }
+
+    public bool Wow6432
+    {
+        get
+        {
+            return this.wow6432;
+        }
+        set
+        {
+            this.wow6432 = value;
+        }
     }
 
     public string AssemblyName
@@ -332,8 +344,7 @@ namespace AddInSpy
       if (this.hostName == "Outlook")
         this.outlookFormRegions = (string) null;
       this.currentDomain = AppDomain.CurrentDomain;
-      this.scanner = new AssemblyScanner();
-      this.currentDomain.ReflectionOnlyAssemblyResolve += new ResolveEventHandler(this.scanner.CurrentDomain_ReflectionOnlyAssemblyResolve);
+      this.currentDomain.ReflectionOnlyAssemblyResolve += new ResolveEventHandler(AssemblyScanner.CurrentDomain_ReflectionOnlyAssemblyResolve);
     }
 
     internal void SetInvalidRegistration()
@@ -529,7 +540,7 @@ namespace AddInSpy
         this.assemblyVersion = clickOnceInfo[1];
       }
       if (File.Exists(this.assemblyPath))
-        assemblyDetails = this.scanner.GetAssemblyInfo(this.assemblyPath, this.hostName, true);
+        assemblyDetails = AssemblyScanner.GetAssemblyInfo(this.assemblyPath, this.hostName, true);
       if (assemblyDetails != null && assemblyDetails.Length > 1)
       {
         this.assemblyName = assemblyDetails[0];
@@ -556,7 +567,7 @@ namespace AddInSpy
       this.assemblyPath = RegistryReader.GetInprocServerFromClsid(this.clsid, "CodeBase");
       if (this.assemblyPath != null && File.Exists(this.assemblyPath))
       {
-        string[] assemblyInfo = this.scanner.GetAssemblyInfo(this.assemblyPath, this.hostName, false);
+        string[] assemblyInfo = AssemblyScanner.GetAssemblyInfo(this.assemblyPath, this.hostName, false);
         this.assemblyName = assemblyInfo[0];
         this.clrVersion = assemblyInfo[1];
         this.supportedInterfaces = !scanManagedInterfaces ? (string) null : this.GetSupportedInterfaces(assemblyInfo);

@@ -109,7 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddInDataControl.resx" />
-    <EmbeddedResource Include="AddInGridControl.resx" />
+    <EmbeddedResource Include="AddInGridControl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>

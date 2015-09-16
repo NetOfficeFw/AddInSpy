@@ -51,6 +51,7 @@ namespace AddInSpy
       this.dataTable.Columns.Add("DllPath");
       this.dataTable.Columns.Add("LoadBehavior");
       this.dataTable.Columns.Add("RegHive");
+      this.dataTable.Columns.Add("Wow6432", typeof (bool));
       this.dataTable.Columns.Add("AssemblyName");
       this.dataTable.Columns.Add("CLR_version");
       this.dataTable.Columns.Add("Exposed", typeof (bool));
@@ -88,6 +89,7 @@ namespace AddInSpy
           (object) addInData.AssemblyPath,
           (object) addInData.LoadBehavior,
           (object) addInData.RegHiveName,
+          (object) addInData.Wow6432,
           (object) addInData.AssemblyName,
           (object) addInData.ClrVersion,
           (object) addInData.IsObjectExposed,
