@@ -26,6 +26,7 @@ namespace AddInSpy
     private DataGridViewTextBoxColumn DllPath;
     private DataGridViewTextBoxColumn LoadBehavior;
     private DataGridViewTextBoxColumn RegHive;
+    private DataGridViewCheckBoxColumn Wow6432;
     private DataGridViewTextBoxColumn AssemblyName;
     private DataGridViewTextBoxColumn CLR_version;
     private DataGridViewCheckBoxColumn Exposed;
@@ -77,6 +78,7 @@ namespace AddInSpy
       this.DllPath = new DataGridViewTextBoxColumn();
       this.LoadBehavior = new DataGridViewTextBoxColumn();
       this.RegHive = new DataGridViewTextBoxColumn();
+      this.Wow6432 = new DataGridViewCheckBoxColumn();
       this.AssemblyName = new DataGridViewTextBoxColumn();
       this.CLR_version = new DataGridViewTextBoxColumn();
       this.Exposed = new DataGridViewCheckBoxColumn();
@@ -98,7 +100,7 @@ namespace AddInSpy
       gridViewCellStyle1.SelectionForeColor = Color.Black;
       this.addInGrid.AlternatingRowsDefaultCellStyle = gridViewCellStyle1;
       this.addInGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.addInGrid.Columns.AddRange((DataGridViewColumn) this.Item, (DataGridViewColumn) this.Host, (DataGridViewColumn) this.Running, (DataGridViewColumn) this.Loaded, (DataGridViewColumn) this.Type, (DataGridViewColumn) this.FriendlyName, (DataGridViewColumn) this.ProgID, (DataGridViewColumn) this.CLSID, (DataGridViewColumn) this.Manifest, (DataGridViewColumn) this.DllPath, (DataGridViewColumn) this.LoadBehavior, (DataGridViewColumn) this.RegHive, (DataGridViewColumn) this.AssemblyName, (DataGridViewColumn) this.CLR_version, (DataGridViewColumn) this.Exposed, (DataGridViewColumn) this.Interfaces, (DataGridViewColumn) this.FormRegions, (DataGridViewColumn) this.VSTOR, (DataGridViewColumn) this.Installed, (DataGridViewColumn) this.PubVer, (DataGridViewColumn) this.Status2, (DataGridViewColumn) this.Status, (DataGridViewColumn) this.StatusDescription);
+      this.addInGrid.Columns.AddRange((DataGridViewColumn) this.Item, (DataGridViewColumn) this.Host, (DataGridViewColumn) this.Running, (DataGridViewColumn) this.Loaded, (DataGridViewColumn) this.Type, (DataGridViewColumn) this.FriendlyName, (DataGridViewColumn) this.ProgID, (DataGridViewColumn) this.CLSID, (DataGridViewColumn) this.Manifest, (DataGridViewColumn) this.DllPath, (DataGridViewColumn) this.LoadBehavior, (DataGridViewColumn) this.RegHive, (DataGridViewColumn) this.Wow6432, (DataGridViewColumn) this.AssemblyName, (DataGridViewColumn) this.CLR_version, (DataGridViewColumn) this.Exposed, (DataGridViewColumn) this.Interfaces, (DataGridViewColumn) this.FormRegions, (DataGridViewColumn) this.VSTOR, (DataGridViewColumn) this.Installed, (DataGridViewColumn) this.PubVer, (DataGridViewColumn) this.Status2, (DataGridViewColumn) this.Status, (DataGridViewColumn) this.StatusDescription);
       gridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
       gridViewCellStyle2.BackColor = SystemColors.Window;
       gridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
@@ -148,6 +150,9 @@ namespace AddInSpy
       this.RegHive.DataPropertyName = "RegHive";
       componentResourceManager.ApplyResources((object) this.RegHive, "RegHive");
       this.RegHive.Name = "RegHive";
+      this.Wow6432.DataPropertyName = "Wow6432";
+      componentResourceManager.ApplyResources((object)this.Wow6432, "Wow6432");
+      this.Wow6432.Name = "Wow6432";
       this.AssemblyName.DataPropertyName = "AssemblyName";
       componentResourceManager.ApplyResources((object) this.AssemblyName, "AssemblyName");
       this.AssemblyName.Name = "AssemblyName";

@@ -214,72 +214,83 @@ namespace AddInSpy
     private void EnumerateRegisteredAddIns(RegistryKey regHive, string hostName)
     {
       string regHiveName = (string) null;
-      string officeRegKeyName = (string) null;
+      List<string> officeRegKeyNames = new List<string>();
       NameValueCollection registeredFormRegions = (NameValueCollection) null;
-      RegistryReader.GetAddInsRegHiveNames(regHive, hostName, out regHiveName, out officeRegKeyName);
-      try
+      RegistryReader.GetAddInsRegHiveNames(regHive, hostName, out regHiveName, officeRegKeyNames);
+      foreach (string officeRegKeyName in officeRegKeyNames)
       {
-        if (hostName == "Outlook" && this.scanFormRegions)
-          registeredFormRegions = RegistryReader.ReadFormRegionRegistrations(regHive);
-        using (RegistryKey registryKey = regHive.OpenSubKey(officeRegKeyName))
+          EvaluateRegisteredAddIn(regHive, hostName, regHiveName, ref registeredFormRegions, officeRegKeyName);
+      }
+    }
+
+    private void EvaluateRegisteredAddIn(RegistryKey regHive, string hostName, string regHiveName, ref NameValueCollection registeredFormRegions, string officeRegKeyName)
+    {
+        try
         {
-          if (registryKey == null)
-            return;
-          foreach (string progId in registryKey.GetSubKeyNames())
-          {
-            bool isDllPathValid = true;
-            NativeMethods.COMAddIn comAddIn = (NativeMethods.COMAddIn) null;
-            bool isValidRegistration = true;
-            this.isUncPath = false;
-            this.isHttpPath = false;
-            Globals.ErrorMessage = (string) null;
-            AddInData addInData = new AddInData(hostName, regHiveName, progId);
-            if (this.progIdsFound.Contains(addInData.ProgId))
-              addInData.StatusDescription = Resources.REGISTERED_MULTIPLE_TIMES;
-            else
-              this.progIdsFound.Add(addInData.ProgId);
-            try
+            if (hostName == "Outlook" && this.scanFormRegions)
+                registeredFormRegions = RegistryReader.ReadFormRegionRegistrations(regHive);
+            using (RegistryKey registryKey = regHive.OpenSubKey(officeRegKeyName))
             {
-              using (RegistryKey addInKey = registryKey.OpenSubKey(addInData.ProgId))
-              {
-                if (addInKey != null)
-                  addInData.GetData(addInKey, this.scanManagedInterfaces, this.scanNativeInterfaces, this.scanRemote, ref this.isUncPath, ref this.isHttpPath, ref isDllPathValid, ref isValidRegistration);
-                else
-                  addInData.SetInvalidAddInKey();
-                if (isValidRegistration)
+                if (registryKey == null)
+                    return;
+                foreach (string progId in registryKey.GetSubKeyNames())
                 {
-                  comAddIn = ComAddInUtilities.GetLoadedCOMAddInObjects(ref addInData);
-                  if (this.isHttpPath)
-                    addInData.StatusDescription = Resources.HTTP_PARTIAL_INFORMATION;
-                  else if (!this.scanRemote && this.isUncPath)
-                    addInData.StatusDescription = Resources.REMOTE_NOT_SELECTED;
-                  else if (addInData.AssemblyPath != null && isDllPathValid)
-                    addInData.InstallDate = this.GetAddInInstallDate(addInData.AssemblyPath);
-                  else
-                    addInData.SetInvalidPath();
-                  if (addInData.AssemblyPath != null && addInData.AssemblyPath.EndsWith(".deploy"))
-                    addInData.AssemblyPath = addInData.AssemblyPath.Substring(0, addInData.AssemblyPath.IndexOf(".deploy"));
+                    bool isDllPathValid = true;
+                    NativeMethods.COMAddIn comAddIn = (NativeMethods.COMAddIn)null;
+                    bool isValidRegistration = true;
+                    this.isUncPath = false;
+                    this.isHttpPath = false;
+                    Globals.ErrorMessage = (string)null;
+                    AddInData addInData = new AddInData(hostName, regHiveName, progId);
+                    addInData.Wow6432 = registryKey.Name.Contains("Wow6432Node") ? true : false;
+                    if (this.progIdsFound.Contains(addInData.ProgId))
+                        addInData.StatusDescription = Resources.REGISTERED_MULTIPLE_TIMES;
+                    else
+                        this.progIdsFound.Add(addInData.ProgId);
+                    try
+                    {
+                        using (RegistryKey addInKey = registryKey.OpenSubKey(addInData.ProgId))
+                        {
+                            if (addInKey != null)
+                                addInData.GetData(addInKey, this.scanManagedInterfaces, this.scanNativeInterfaces, this.scanRemote, ref this.isUncPath, ref this.isHttpPath, ref isDllPathValid, ref isValidRegistration);
+                            else
+                                addInData.SetInvalidAddInKey();
+                            if (isValidRegistration)
+                            {
+                                comAddIn = ComAddInUtilities.GetLoadedCOMAddInObjects(ref addInData);
+                                if (this.isHttpPath)
+                                    addInData.StatusDescription = Resources.HTTP_PARTIAL_INFORMATION;
+                                else if (!this.scanRemote && this.isUncPath)
+                                    addInData.StatusDescription = Resources.REMOTE_NOT_SELECTED;
+                                else if (addInData.AssemblyPath != null && isDllPathValid)
+                                    addInData.InstallDate = this.GetAddInInstallDate(addInData.AssemblyPath);
+                                else
+                                    addInData.SetInvalidPath();
+                                if (addInData.AssemblyPath != null && addInData.AssemblyPath.EndsWith(".deploy"))
+                                    addInData.AssemblyPath = addInData.AssemblyPath.Substring(0, addInData.AssemblyPath.IndexOf(".deploy"));
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Globals.AddException(ex);
+                    }
+                    if (Globals.ErrorMessage != null && Globals.ErrorMessage.Length > 0)
+                        addInData.StatusDescription = !string.IsNullOrEmpty(addInData.StatusDescription) ? string.Format("{0} {1}", (object)addInData.StatusDescription, (object)Globals.ErrorMessage) : Globals.ErrorMessage;
+                    if (this.scanDisabled)
+                        addInData.ScanForDisabledItems();
+                    if (addInData.HostName == "Outlook" && this.scanFormRegions)
+                        addInData.ScanForFormRegions(registeredFormRegions);
+                    this.gridProxy.AddDataRow(addInData);
                 }
-              }
             }
-            catch (Exception ex)
-            {
-              Globals.AddException(ex);
-            }
-            if (Globals.ErrorMessage != null && Globals.ErrorMessage.Length > 0)
-              addInData.StatusDescription = !string.IsNullOrEmpty(addInData.StatusDescription) ? string.Format("{0} {1}", (object) addInData.StatusDescription, (object) Globals.ErrorMessage) : Globals.ErrorMessage;
-            if (this.scanDisabled)
-              addInData.ScanForDisabledItems();
-            if (addInData.HostName == "Outlook" && this.scanFormRegions)
-              addInData.ScanForFormRegions(registeredFormRegions);
-            this.gridProxy.AddDataRow(addInData);
-          }
+            return;
         }
-      }
-      catch (Exception ex)
-      {
-        Globals.AddException(ex);
-      }
+        catch (Exception ex)
+        {
+            Globals.AddException(ex);
+            return;
+        }
     }
 
     private string GetAddInInstallDate(string assemblyPath)

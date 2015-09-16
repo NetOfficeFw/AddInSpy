@@ -7,6 +7,7 @@
 using AddInSpy.Properties;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
 
@@ -16,17 +17,31 @@ namespace AddInSpy
   {
     private static string formRegionRegKeyName = "Software\\Microsoft\\Office\\Outlook\\FormRegions";
 
-    internal static void GetAddInsRegHiveNames(RegistryKey regHive, string hostName, out string regHiveName, out string officeRegKeyName)
+    internal static void GetAddInsRegHiveNames(RegistryKey regHive, string hostName, out string regHiveName, List<string> officeRegKeyNames)
     {
       regHiveName = (string) null;
-      officeRegKeyName = (string) null;
       regHiveName = regHive != Registry.CurrentUser ? "HKLM" : "HKCU";
       if (hostName == "Visio")
-        officeRegKeyName = "Software\\Microsoft\\Visio\\Addins";
+      {
+          officeRegKeyNames.Add("Software\\Microsoft\\Visio\\Addins");
+
+          if (regHiveName == "HKLM")
+              officeRegKeyNames.Add("Software\\Wow6432Node\\Microsoft\\Visio\\Addins");
+      }
       else if (hostName == "Project")
-        officeRegKeyName = "Software\\Microsoft\\Office\\MS Project\\Addins";
+      {
+          officeRegKeyNames.Add("Software\\Microsoft\\Office\\MS Project\\Addins");
+
+          if (regHiveName == "HKLM")
+              officeRegKeyNames.Add("Software\\Wow6432Node\\Microsoft\\Office\\MS Project\\Addins");
+      }
       else
-        officeRegKeyName = "Software\\Microsoft\\Office\\" + hostName + "\\Addins";
+      {
+          officeRegKeyNames.Add("Software\\Microsoft\\Office\\" + hostName + "\\Addins");
+
+          if (regHiveName == "HKLM")
+              officeRegKeyNames.Add("Software\\Wow6432Node\\Microsoft\\Office\\" + hostName + "\\Addins");
+      }
     }
 
     internal static string GetInprocServerFromClsid(string clsid, string codeBase)
