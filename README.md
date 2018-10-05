@@ -10,4 +10,4 @@ This source code is based on disassembled version of original AddInSpy.
 
 **AddInSpy** source code license under [Microsoft Public License](LICENSE.txt)
 
-[1]: http://blogs.msdn.com/b/vsto/archive/2008/10/02/diagnosing-troubleshooting-office-add-ins-with-addinspy-beth-massi.aspx
+[1]: https://web.archive.org/web/20140411132835/http://blogs.msdn.com/b/vsto/archive/2008/10/02/diagnosing-troubleshooting-office-add-ins-with-addinspy-beth-massi.aspx
